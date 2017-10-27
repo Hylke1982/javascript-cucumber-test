@@ -18,15 +18,22 @@ Facade.prototype.prepareEnvironment = () => {
 };
 
 Facade.prototype.doCorrectRequest = () => {
-    var result = implementation.doCorrectRequest();
-    // If needed transform result here
-    console.log("Result", result);
-    return result;
+    const promise = implementation.doCorrectRequest();
+    return promise
+        .then(JSON.parse)
+        .then((body) => {
+            console.log("body", body.message);
+            return body.message;
+        })
+        .catch(() => console.log("exception"));
 
 };
 
 
 Facade.prototype.doIncorrectRequest = () => {
+
+    return implementation.doIncorrectRequest()
+        .then(JSON.parse);
 
 };
 

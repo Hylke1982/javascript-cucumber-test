@@ -4,11 +4,13 @@
   "description": "Example for cucumber with nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber.js features/"
+    "test": "node ./node_modules/.bin/cucumber.js features/",
+    "debug": "node inspect ./node_modules/.bin/cucumber.js features/"
   },
   "author": "Hylke Stapersma",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.1.2",
     "cucumber": "^3.0.5",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"

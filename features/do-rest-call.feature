@@ -11,8 +11,8 @@ Feature: Do a some call
 
   @unhappy
   Scenario: With incorrect input ACTOR expect a failure result
-    Given All tools available and ACTOR am on the right location
-    When ACTOR do a incorrect request
-    Then ACTOR expect a failure result
+    Given All tools available and ACTOR is on the right location
+    When ACTOR does a incorrect request
+    Then ACTOR expect a incorrect result
 
 
